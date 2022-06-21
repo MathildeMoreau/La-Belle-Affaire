@@ -1,7 +1,7 @@
 let input = document.getElementById('input');
 let button = document.querySelector('button');
 let checkbox = document.querySelector('#checkbox');
-let rowTable = document.querySelector('#tableRow');
+let elements = document.querySelector('#liste');
 let radioName = document.getElementById('alphabeticalOrder');
 let radioPrice = document.getElementById('priceOrder');
 
@@ -33,13 +33,12 @@ button.addEventListener('click', function(){
         listTriable.sort((function(a,b) {
             return a.items[0].price - b.items[0].price;
         }));
-        console.log(listTriable)
     }
 
     // Boucle sur les données pour afficher chaque élément
     listTriable.map((data) => {
         data.items[0].traduction = "";
-        // Indique la traduction de l'anglais vers le français 
+        // Indique la traduction de la catégorie de l'anglais vers le français 
         for (let i = 0; i < category.length; i++){
             if(data.type === category[i][0]){
                 data.items[0].traduction = category[i][1]
@@ -47,30 +46,17 @@ button.addEventListener('click', function(){
         }
         // Affiche les éléments dans le HTML
         if (request === data.items[0].traduction){
-            console.log(listTriable)
-            for (let i = 0; i < data.items.length; i++){
-                let newRow = document.createElement('tr');
-                let table = document.getElementById('tableBody')
-                table.appendChild(newRow);
-            }
-
-            let nameProduct = document.getElementById('productName');
-            let descriptionProduct = document.getElementById('productDescription');
-            let priceProduct = document.getElementById('productPrice');
-            let contactProduct = document.getElementById('productContact');
-
-            nameProduct.innerHTML = data.items[0].name;
-            descriptionProduct.innerHTML = data.items[0].description;
-            contactProduct.innerHTML = data.items[0].contact.firstName;
-
+            const li = document.createElement('li');
             // Formatage des prix
             let price = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(data.items[0].price);
-            priceProduct.innerHTML = price;
-
+            li.innerHTML = `${data.items[0].name} - ${price} - Vendu par : ${data.items[0].contact.firstName}`;
+            console.log(data)
 
             // Affichage en fonction du stock
             if (checkbox.checked === true){
-                data.quantity > 0 ? rowTable.appendChild(newRow) : console.log(data.items[0].name + " n'est pas en stock")
+                data.items[0].quantity > 0 ? elements.append(li) : console.log(data.items[0].name + " n'est pas en stock")
+            } else {
+                elements.append(li);
             }
         }
     })
