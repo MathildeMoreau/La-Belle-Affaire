@@ -1,0 +1,108 @@
+<!doctype html>
+<html  lang="fr">
+    <head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>La belle affaire</title>
+	
+		<link rel="stylesheet" href="./style.css">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+	</head>
+    <body>
+		<div class="container-fluid">
+			<h1 class="bg-warning p-5 m-0">La belle affaire</h1>
+			<div class="m-3 d-flex row">
+				<div class="col-8">
+					<input type="text" value="" id="input" placeholder="Rechercher ..." class="form-control">
+				</div>
+				<div class="col-4 d-flex align-items-center">
+					<input type="checkbox" id="checkbox" name="checkbox" class="m-2">
+					<label for="checkbox">En stock</label>
+				</div>
+			</div>
+			
+			<div class="row ms-4">
+				<div class="col-4 d-flex align-items-center">
+					<input type="radio" name="order" id="alphabeticalOrder" value="alphabet" class="m-2"></input>
+					<label for="alphabeticalOrder">Tri par nom</label>
+				</div>
+				<div class="col-4 d-flex align-items-center">
+					<input type="radio" name="order" id="priceOrder" value="prix" class="m-2"></input>
+					<label for="priceOrder">Tri par prix</label>
+				</div>
+				<div class="col-4">
+					<button type="submit" class="btn btn-warning">Rechercher</button>
+				</div>
+			</div>
+		</div>
+		<div class="products">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">Name</th>
+						<th scope="col">Description</th>
+						<th scope="col">Price</th>
+						<th scope="col">Contact</th>
+					</tr>
+					<tbody id="tableBody">
+						<tr id="tableRow">
+							<td id="productName"></td>
+							<td id="productDescription"></td>
+							<td id="productPrice"></td>
+							<td id="productContact"></td>
+						</tr>
+					</tbody>
+				</thead>
+			</table>
+			<ul id="liste">
+
+			</ul>
+
+		</div>
+		<div class="newObject">
+			<h2>Ajouter un objet à vendre</h2>
+			<form action="">
+				<div class="input-group">
+					<label for="name">Nom de l'objet</label>
+					<input type="text" id="name" name="name" value="">
+				</div>
+				<div class="input-group">
+					<label for="type">Catégorie</label>
+					<select name="type" id="type">
+						<option value=".">--Séléctionner une option--</option>
+						<option value="car">Voiture</option>
+						<option value="house">Maison</option>
+						<option value="game">Jeu</option>
+						<option value="videoGame">Jeux vidéos</option>
+						<option value="show">Spectacles</option>
+					</select>
+				</div>
+				<div class="input-group">
+					<label for="description">Décrivez votre objet</label>
+					<textarea name="description" id="description" cols="30" rows="10"></textarea>
+				</div>
+				<div class="input-group">
+					<label for="price">Prix</label>
+					<input type="number" id="price">
+				</div>
+				<div class="input-group">
+					<label for="quantity">Combien souhaitez vous en vendre ?</label>
+					<input type="number" id="quantity">
+				</div>
+				<button type="submit" id="addObject">Ajouter</button>
+			</form>
+		</div>
+
+		<div class="bestSalesPeople">
+			<ul id="vendors">
+
+			</ul>
+		</div>
+		<script src="datas.js"></script>
+		<script src="exo7.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+	</body>
+</html>
