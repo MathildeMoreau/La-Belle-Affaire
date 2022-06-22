@@ -17,6 +17,7 @@ let category = Object.entries(traductions);
 
 // Fonctions de recherche
 button.addEventListener('click', function(){
+    elements.innerHTML = "";
     let request = input.value;
 
     // Création du bouton radio pour trier par nom dans l'ordre alphabétique
