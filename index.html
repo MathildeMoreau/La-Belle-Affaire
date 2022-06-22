@@ -43,16 +43,16 @@
 			</ul>
 
 		</div>
-		<div class="newObject">
-			<h2>Ajouter un objet à vendre</h2>
-			<form action="">
-				<div class="input-group">
-					<label for="name">Nom de l'objet</label>
-					<input type="text" id="name" name="name" value="">
+		<div class="newObject container-fluid m-5 row">
+			<h2 class="text-center">Ajouter un objet à vendre</h2>
+			<form action="" class="d-flex flex-column justify-content-center align-items-center col-8">
+				<div class="input-group m-3 row">
+					<label for="name" class="form-label col-2">Nom de l'objet</label>
+					<input type="text" id="name" name="name" value="" class="form-control ms-5 col-8">
 				</div>
-				<div class="input-group">
-					<label for="type">Catégorie</label>
-					<select name="type" id="type">
+				<div class="input-group m-3 row">
+					<label for="type" class="form-label col-2">Catégorie</label>
+					<select name="type" id="type" class="form-select ms-5 col-8">
 						<option value=".">--Séléctionner une option--</option>
 						<option value="car">Voiture</option>
 						<option value="house">Maison</option>
@@ -61,19 +61,25 @@
 						<option value="show">Spectacles</option>
 					</select>
 				</div>
-				<div class="input-group">
-					<label for="description">Décrivez votre objet</label>
-					<textarea name="description" id="description" cols="30" rows="10"></textarea>
+				<div class="input-group m-3 row">
+					<label for="description" class="form-label col-2">Décrivez votre objet</label>
+					<textarea name="description" id="description" cols="10" rows="10" class="form-control ms-5 col-8"></textarea>
 				</div>
-				<div class="input-group">
-					<label for="price">Prix</label>
-					<input type="number" id="price">
+				<div class="input-group m-3 row">
+					<label for="price" class="form-label col-2">Prix</label>
+					<input type="number" id="price" class="form-control ms-5 col-8">
 				</div>
-				<div class="input-group">
-					<label for="quantity">Combien souhaitez vous en vendre ?</label>
-					<input type="number" id="quantity">
+				<div class="input-group row m-3">
+					<label for="quantity" class="form-label col-3">Combien souhaitez vous en vendre ?</label>
+					<input type="number" id="quantity" class="form-control col-6">
 				</div>
-				<button type="submit" id="addObject">Ajouter</button>
+				<div class="input-group row m-3">
+					<label for="firstName" class="form-label col-2 text-center">Votre prénom</label>
+					<input type="text" id="firstName" class="form-control col-4">
+					<label for="lastName" class="form-label col-2 text-center">Votre nom</label>
+					<input type="text" id="lastName" class="form-control col-4">
+				</div>
+				<button type="submit" id="addObject" class="btn btn-warning col-4 mt-3 ">Ajouter</button>
 			</form>
 		</div>
 

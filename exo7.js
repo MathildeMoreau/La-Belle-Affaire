@@ -70,14 +70,15 @@ let typeInput = document.getElementById('type');
 let descriptionInput = document.getElementById('description');
 let priceInput = document.getElementById('price');
 let quantityInput = document.getElementById('quantity');
+let firstNameInput = document.getElementById('firstName');
+let lastNameInput = document.getElementById('lastName');
 
 addBtn.addEventListener('click', function(e){
     e.preventDefault();
-    const addObject = (nameInput, typeInput, descriptionInput, priceInput, quantityInput) => {
-        jsonDatas.push({name: nameInput, type: typeInput, description: descriptionInput, price: priceInput, quantity: quantityInput})
+    const addObject = (nameInput, typeInput, descriptionInput, priceInput, quantityInput, firstNameInput, lastNameInput) => {
+        jsonDatas.push({type: typeInput, items: [{name: nameInput,  description: descriptionInput, price: priceInput, quantity: quantityInput, contact: {firstName: firstNameInput, lastName: lastNameInput}}]})
     }
-    addObject(nameInput.value, typeInput.value, descriptionInput.value, priceInput.value, quantityInput.value);
+    addObject(nameInput.value, typeInput.value, descriptionInput.value, priceInput.value, quantityInput.value, firstNameInput.value, lastNameInput.value);
 
     console.log(jsonDatas)
-
 })
